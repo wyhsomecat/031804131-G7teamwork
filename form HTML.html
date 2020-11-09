@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .show-img{
+            display: inline-block;
+            width: 200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>form表单上传文件</h1><hr>
+    <form action="/test/" method="POST" enctype="multipart/form-data">
+        <p>名称：<input type="text" name="user"></p>
+        <p>文件：<input type="file" name="testfile"></p>
+        <p><input type="submit" value="提交"></p>
+    </form>
+    {% for i in imglist %}
+        <img class="show-img" src="/{{ i.0 }}">
+    {% endfor %}
+</body>
+</html>
